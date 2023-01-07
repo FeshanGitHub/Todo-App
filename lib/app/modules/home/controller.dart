@@ -158,8 +158,12 @@ class HomeController extends GetxController {
 
   int getTotalTask(){
     var res = 0;
-    for(int i =0; i < tasks.length; i++){
-      res += tasks[i].todos!.length;
+    for(int i = 0; i < tasks.length; i++){
+      if(tasks[i].todos != null){
+        res += tasks[i].todos!.length;
+      }else {
+        [];
+      }
     }
     return res;
   }
